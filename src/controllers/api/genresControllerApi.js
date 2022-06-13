@@ -50,6 +50,11 @@ const genresController = {
         })
 
     }
+
+    /* todo esto de las apis sirve  
+    FETCH: es una peticion para hacer pedidos asincronicos
+    con javascript. Para hacer pedidos a otras aplicaciones
+    o servicios.*/
     
 }
 
