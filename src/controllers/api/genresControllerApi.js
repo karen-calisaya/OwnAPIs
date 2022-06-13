@@ -27,6 +27,27 @@ const genresController = {
         })
     },
     detail: (req, res) => {
+        db.Genre.findByPk(req.params.id)
+        .then((genre) => {
+            let response = {
+                meta: {
+                    status: 200,
+                    url: '/api/genres/' + req.params.id,
+                },
+                data: genre
+            }
+            res.json(response)
+        })
+        .catch((error) => {
+            let response = {
+                meta: {
+                    status: 400,
+                    url: '/api/genres',
+                },
+                error: error
+            }
+            res.json(response)
+        })
 
     }
     

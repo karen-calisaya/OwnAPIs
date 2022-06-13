@@ -1,0 +1,46 @@
+APIS:
+No vas a hacer la vista, siendo backend. Nos vamos a encargar de tener todos los datos, para que en front-end pueda consumirlo.
+Json, ahora se utiliza esto para la transferencia de datos.
+xml es un lenguaje que se utiliza paraa la transferencia de datos. tiene etiquetas, donde se transfiere la informacion. XML tiene una estructura como el html, no es tan legible. Muchos sistemas lo utilizan, por ejemplo, andreani. Te llega como texto plano, como el json. 
+la API, application programming interface, es una intefaz. Devuelve un json, lo que vamos a hacer es arle una ruta a ese json o un enpoint, en donde lo relacionamos, que es como la puerta a la api. En vez de devolver la vista, devuelve el json. 
+Ya no va mas el res render, es res json. Ahi mandamos el producto, por ejemplo,o lo que consumamos de la api.
+La api suministra los servicios que se piden, por ejemplo, los productos, etc.
+Las apis tienen que validar los datos que reciben. Tengo que utilizar ademas de un mensaje de error hay que usar los status code, los protocolos de http.  400, 404, 500(problemas de servidor)etc. 
+
+.Tenemos que instalar POSTMAN
+
+Postman es para testear los endpoints de nuestra apis. ENDPOINT, es una url a la que podemos acceder para que el servidor nos de como respuestra la informacion esperada.
+
+API REST. (o rest api, o rest full api)
+
+Rest es la forma en la que esta organizada la informacion, basicamente. Es como una organizacion o estructura especifica, para que todos la entiendan.
+Una estructura estándar.
+
+REST es una arquitectura de servicio que proporciona estandares entres sistemas informáticos para establecer cómo se van a comunicar entre sí. 
+ 
+La informacion que estamos manejando en nuestra aplicacion es local, por asi decirlo. Pero al crear una api y ponerla a disposicion, muchos sistemas son los que la consumiran y haran pedidos, para diferentes fines.El recurso sera uno, HAY MUCHOS SISTEMAS que lo consumiran. 
+
+REST es una arquitectura del tipo cliente-servidor porque debe permitir que tanto la aplicacion del cliente como la aplicacion del servidor se desarrollen o esclaen sin interferir una con la otra.
+RECURSOS UNIFORMES: del lado del servidor, interfaz uniforme, tienen un nombre en forma de URL o hipervinculo, la informacion se intercanbia a traves del protoco HTTP.
+
+SIN ESTADO/STATELESS
+Rest propone que todas las interracciones entre el cliente y el servidor deben ser tratadas como nuevas y de forma absolutamente independiente sin guardar estado. 
+
+CACHEABLES 
+Todo el tiempo se hacen peticiones a las apis, eso consume muchisimos recursos. Por eso se guardan muchos se esos request o pedidos en la memoria cache de nuestra compu. Eso hace posible que cuando volvamos a hacer una request o pedir informacion, va a tener en cuenta los datos cargados en la cache, y sobre eso hará el nuevo pedido. No consultará a la base de cero, eso hace que los pedidos a las apis sean mas ligeras, por asi decirlo.
+
+FORMATOS DE ENVIOS DE DATOS:
+.json, raw, xlt, ..
+.JSON viaja a las cabezeras de la respuesta. 
+.RAW para mandar datos con texto sin ningun formato en particular. 
+.URL-ENCODED algo similar a una query strign.
+
+CREACION DE NUESTRA PROPIAS APIs:
+1. Identificar nuestro objeto modelo:
+Tenemos entidades, usuarios y productos. Queremos gestionar eso, las identificamos y las establecemos como recursos. Las COLECCIONES, recursos internos, listar, etc, 
+
+2. Crear url:
+las url o endpoints son la fomra que utilizamos para aceder a los datos que contiene nuestra ApI.
+
+3.Operaciones de ruta: 
+las operaciones de ruta que utilizamos con las api rest son aquellas que conocemos como metodos HTTP.
