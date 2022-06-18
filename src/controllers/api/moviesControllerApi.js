@@ -49,8 +49,8 @@ module.exports = {
         })
     },
     create: (req, res) => {
-        let errors = validationResult(req);
-        if(errors.isEmpty()){
+        let errors = validationResult(req); /* mandamos los errores */
+        if(errors.isEmpty()){ /* si no hay errores, creame esto */
             db.Movie.create({
                 title: req.body.title,
                 rating: req.body.rating,
@@ -59,7 +59,7 @@ module.exports = {
                 length: req.body.length,
                 genre_id: req.body.genre_id
             })
-            .then(movie => {
+            .then(movie => { /* establezco el .then con meta y data */
                 let response = {
                     meta: {
                         status: 201, /* recurso creado exitosamente */
@@ -76,37 +76,16 @@ module.exports = {
                 })
             })
 
-        }else {
+        }else { /* si hay errores, que me tire el mensaje de error */
             let requestErrorsResponse = {
                 meta: {
                     status: 400,
                     errorMessage: "Datos enviados inválidos"
                 },
-                errors: [errors.mapped()]
+                errors: [errors.mapped()] /* lo mandamos como un array */
             }
             res.status(400).json(requestErrorsResponse)
         }
-        
-
-        /* db.Movie.create(req.body)
-        .then((movie) => {
-            let response = ´{
-                meta: {
-                    status: 200,
-                },
-                data: movie
-            }
-            res.json(response)
-        })
-        .catch((error) => {
-            let response = {
-                meta: {
-                    status: 400,
-                }
-                error : erros
-            }
-            res.json(response)
-        }) */
     },
     edit: (req, res) => {
 

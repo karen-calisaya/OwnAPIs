@@ -11,7 +11,9 @@ const genresController = {
         .then(result => {
             res.render('genresList.ejs', {genres: result.data})
         })
-        /* esto lo hacemos para consumir apis de terceros, no aplicaciones nuestras */
+        /* esto lo hacemos para consumir apis de terceros, no aplicaciones nuestras
+        pero en este ejemplo estamos consumiendo la api que creamos nosotros, y por el endpoint
+        la estamos utilizando */
     },
     'detail': (req, res) => {
         db.Genre.findByPk(req.params.id)
